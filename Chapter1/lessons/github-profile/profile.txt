@@ -1,6 +1,6 @@
 Name: Kevin
 Grade: 10th
-Favorite Programming Language: Java
+Favorite Programming Language: Java 
 Favorite Thing About Computer Science: Making my own choices.
 Something I Am Good At: Math
 Something I Want To Learn: Java
