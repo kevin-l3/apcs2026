@@ -28,13 +28,17 @@ public class week_budget
         // read integer
         System.out.print("Enter the number of school lunches you have ordered the week:");
         lunchesPerWeek = scan.nextInt();
-        
+        // Perform calcluatilations ( arhtimetic expressions)
         totalCost = lunchPrice * lunchesPerWeek;
+        remaining = allowance - totalCost;
+        System.out.println("you have: " + allowance + " for allowance");
+        System.out.println("it costs: " + totalCost + " for your food");
         if (totalCost>allowance){
             System.out.println("broke ahh");
         }
         else { 
-                System.out.println("nice");
+                System.out.print("nice, ");
+                System.out.print("you have : " + remaining + " dollars remaining");
         }
         
     }
