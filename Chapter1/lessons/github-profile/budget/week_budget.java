@@ -1,9 +1,10 @@
 /**
  * weekly budget
  * kevin
- * last updated : 8/21/2026
+ * last updated : 8/25/2026
  */
 import java.util.Scanner;
+import java.text.NumberFormat;
 public class week_budget
 {
     //calculate weekly lunch spending and remaining money
@@ -12,6 +13,8 @@ public class week_budget
         String name; 
         double allowance, lunchPrice, totalCost, remaining;
         int lunchesPerWeek;
+        
+        NumberFormat money = NumberFormat.getCurrencyInstance();
         
         // instantiate (to create) the scanner object to read from the keyboard
         Scanner scan = new Scanner(System.in);
@@ -31,15 +34,13 @@ public class week_budget
         // Perform calcluatilations ( arhtimetic expressions)
         totalCost = lunchPrice * lunchesPerWeek;
         remaining = allowance - totalCost;
-        System.out.println("you have: " + allowance + " for allowance");
-        System.out.println("it costs: " + totalCost + " for your food");
-        if (totalCost>allowance){
-            System.out.println("broke ahh");
-        }
-        else { 
-                System.out.print("nice, ");
-                System.out.print("you have : " + remaining + " dollars remaining");
-        }
+        // printf allows placeholders for strings using %s
+        System.out.printf("%n--- Weekly budget summary for %s ---%n", name);
+        
+        System.out.printf("%-25s %s%n", "Weekly allowance: " , money.format(allowance));
+        System.out.printf("%-25s %s%n", "total spent on lunches: " , money.format(totalCost));
+        System.out.printf("%-25s %s%n", "Money remaining: " , money.format(remaining));
+        
         
     }
     }
