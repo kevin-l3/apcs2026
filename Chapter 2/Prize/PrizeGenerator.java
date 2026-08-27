@@ -29,13 +29,22 @@ public class PrizeGenerator
         int prizeAmount = 10 + (int) (Math.random() * 91);
         System.out.println("the cash prize is: " + prizeAmount);
         int fee = 1 + (int)(Math.random() * 5);
-        System.out.println("how much money do you want to bet?");
-        double betAmount = scan.nextDouble();
-        if (betAmount>startBalance) {
-            System.out.println("you are too broke");
-        }
-        int higherLower = (int)(Math.random() * 100);
-        System.out.print(higherLower);
+        // this is allowed as no infomraiton would be lost.
+        double finalBalance = startBalance + prizeAmount - fee;
+        
+        System.out.println("\n Congratulation " + name + "! Here is your statement: ");
+        System.out.println("================================================");
+        
+        System.out.printf("%-25s %s%n", "Starting Blance" , money.format(startBalance));
+        System.out.printf("%-25s %s%n", "Prize Money" , money.format(prizeAmount));
+        System.out.printf("%-25s %s%n", "Processing fee" , money.format(fee));
+        System.out.println("-----------------------------------");
+        System.out.printf("%-25s %s%n" , "final balnce" , money.format(finalBalance));
+        System.out.println("================================================");
+        
+    
+        
+        
         
     }
     
